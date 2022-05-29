@@ -102,7 +102,9 @@ async function getShippment(req,res) {
 
 
 async function getCusterShippmentById(req,res) {
-    const payload = req.params.Id;
+    const payload = req.params.id;
+
+	console.log(payload);
 
 	packageModel.findById(payload, (err, shippment) => {
 		if (err) {
