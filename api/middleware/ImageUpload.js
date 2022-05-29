@@ -41,18 +41,12 @@ async function uploadImage(req,res,next) {
 }
 
 
-async function deleteImage(req,res,next) {
+async function deleteImage(imageId) {
     // console.log(req.body);
     try {
-        const fileStr =  await req.body.imageUrl;
-        const deletedResponse = await cloudinary.uploader.destroy('zombie', function(result) { console.log(result) })
-    
-    
+      
+        const deletedResponse = await cloudinary.uploader.destroy(imageId, function(result) { console.log(result) })
 
-        next()
-
-
-        // res.json({ msg: 'yaya' });
     } catch (err) {
         console.error(err);
         res.status(500).json({ err: 'Something went wrong' });
@@ -60,6 +54,6 @@ async function deleteImage(req,res,next) {
 }
 
 
-module.exports = uploadImage;
+module.exports = {uploadImage,deleteImage};
 
 

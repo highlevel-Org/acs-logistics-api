@@ -2,7 +2,7 @@ const express = require("express");
 const shippmentRouter = express.Router();
 
 const verifyToken = require('../../middleware/verify');
-const uploadImage = require('../../middleware/ImageUpload')
+const {uploadImage} = require('../../middleware/ImageUpload')
 
 const {getAllShippment,
     getAllShippmentByUserId,

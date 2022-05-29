@@ -1,6 +1,7 @@
 
 
 const packageModel = require("../../Database/model/package-model");
+const {deleteImage}  = require("../../middleware/ImageUpload")
 
 
 
