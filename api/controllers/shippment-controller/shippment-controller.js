@@ -79,6 +79,8 @@ async function PostShippment(req,res) {
 async function getShippment(req,res) {
     const payload = req.params.id;
 
+	console.log({payload});
+
 	packageModel.findById(payload, (err, shippment) => {
 		if (err) {
 			return console.error(err);

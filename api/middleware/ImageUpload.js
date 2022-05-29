@@ -13,6 +13,10 @@ async function uploadImage(req,res,next) {
     // console.log(req.body);
     try {
         const fileStr =  await req.body.imageUrl;
+
+        if (fileStr==='') {
+            return next()
+        }
         const uploadResponse = await cloudinary.uploader.upload(fileStr, {
             upload_preset:'package_preset'
         });

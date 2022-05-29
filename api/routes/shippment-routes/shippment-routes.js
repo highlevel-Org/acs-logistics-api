@@ -24,7 +24,11 @@ shippmentRouter.get("/byUser/:userId",verifyToken,getAllShippmentByUserId);
 
 
 // get  shippment by id route for for frontend Customer
-shippmentRouter.get("/customerShippment/:Id",getCusterShippmentById);
+shippmentRouter.get("/customerShippment/:id",getCusterShippmentById);
+// shippmentRouter.get("/customerShippment/:id",(req,res)=>{
+//     console.log("we here");
+// }
+// );
 
 
 //get single shippment by id route
