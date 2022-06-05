@@ -9,6 +9,7 @@ const packageSchema = new mongoose.Schema(
 		completed: Boolean,
 		imageUrl: { type: String },
         serviceType:String,
+        serialNumber:String,
         deliveryDate: { type: Date},
         shippedDate: { type: Date, default: Date.now },
 		shippingCost:{ type: String },
