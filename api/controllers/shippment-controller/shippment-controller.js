@@ -74,9 +74,9 @@ async function getShippment(req, res) {
 }
 
 async function getCusterShippmentById(req, res) {
-	const payload = req.params.id;
+	const payload = await req.params.id;
 
-	// console.log(payload);
+	// console.log("from customer route",JSON.stringify(payload));
 
 	packageModel.findById(payload, (err, shippment) => {
 		if (err) {
