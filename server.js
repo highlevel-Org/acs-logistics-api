@@ -23,6 +23,7 @@ server.use(cors())
 server.use(morgan('tiny'))
 server.use(bodyParser.urlencoded({limit:'50mb', extended: false }))
 server.use(express.json({ limit: '50mb' }));
+server.disable('etag')
 
 // server.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
