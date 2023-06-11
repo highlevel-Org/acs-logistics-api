@@ -8,11 +8,11 @@ const packageSchema = new mongoose.Schema(
 		weight: Number,
 		completed: Boolean,
 		imageUrl: { type: String },
-        serviceType:String,
-        serialNumber:String,
-        deliveryDate: { type: Date},
-        shippedDate: { type: Date, default: Date.now },
-		shippingCost:{ type: String },
+		serviceType: String,
+		serialNumber: String,
+		deliveryDate: { type: Date },
+		shippedDate: { type: Date, default: Date.now },
+		shippingCost: { type: String },
 
 		origin: {
 			senderName: String,
@@ -21,18 +21,18 @@ const packageSchema = new mongoose.Schema(
 			originCordinates: { lat: String, long: String },
 		},
 
-
 		currentLocation: {
-            reason:{type:String},
-            currentCordinates: { lat: String, long: String },
-        },
+			reason: { type: String },
+			currentLocationAddress: { type: String },
+			currentCordinates: { lat: String, long: String },
+		},
 
 		destination: {
-            receiverName: String,
+			receiverName: String,
 			receiverEmail: String,
 			receiverPhone: String,
 			receiverAddress: String,
-            receiverCordinates: { lat: String, long: String },
+			receiverCordinates: { lat: String, long: String },
 		},
 
 		user: {

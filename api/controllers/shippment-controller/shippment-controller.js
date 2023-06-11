@@ -16,13 +16,15 @@ async function getAllShippment(req, res) {
 }
 
 async function getAllShippmentByUserId(req, res) {
-	const userId = await req.params.userId;
+	const userId = await req?.params?.userId;
 
 	try {
 		const response = await packageModel.find({}).populate("user");
 
 		// console.log(JSON.stringify(response,null,2));
-		const shippment = response.filter(({ user: { _id } }) => _id.toString() === userId);
+		const shippment = response?.filter(
+			({ user: { _id } }) => _id?.toString() === userId
+		);
 
 		return res.send(shippment);
 	} catch (error) {
@@ -54,11 +56,13 @@ async function PostShippment(req, res) {
 async function getShippment(req, res) {
 	const payload = req.params.id;
 
-	console.log({ payload });
+	// console.log({ payload });ß
 
 	packageModel.findById(payload, (err, shippment) => {
 		if (err) {
-			return console.error(err);
+			return res.status(404).json({
+				message: err?.message,
+			});
 		}
 
 		if (!shippment) {
